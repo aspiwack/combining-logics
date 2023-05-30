@@ -9,6 +9,7 @@
 \addbibresource{bibliography.bib}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{subcaption}
 \usepackage{hyperref}
