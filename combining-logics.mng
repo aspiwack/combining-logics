@@ -88,6 +88,7 @@
 \maketitle
 
 \chapter{Simple logics}
+\label{cha:simple-logics}
 
 \section{Notations}
 
@@ -166,6 +167,7 @@ Constructions:
 \end{itemize}
 
 \chapter{Types, proof theory}
+\label{cha:types-proof-theory}
 
 Principle: all categories are small.
 
@@ -182,6 +184,8 @@ bicomplete)). We can reinterpret deduction rules as adjoints (this is
 a little trickier because of the naturality conditions: in the rule
 for exponentials, for instance, we need to be natural in everything
 except the bit that changes side; can this be clarified notationally?)
+
+The constructions from \cref{cha:simple-logics} carry over.
 
 \printbibliography
 
