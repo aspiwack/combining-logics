@@ -88,13 +88,99 @@
 
 \chapter{Simple logics}
 
-\section {Propositional logic}
+\section{Notations}
+
+Inference rules interpreted as Galois connections.
+
+In judgements, only one hypothesis and one conclusion.
+
+\section{Propositional logic}
+
+Structures:
+\begin{itemize}
+\item Lattices
+\item Complete Lattices
+\item Heyting algebras
+\item Complete Heyting algebras
+\item (Ordered) residuated commutative monoid (\emph{i.e.} multiplicative
+  intuitionistic linear logic) (which can also be any lattice
+  structures in a different way!)
+\end{itemize}
+
+Constructions:
+\begin{itemize}
+\item $\mathcal{P}A$
+\item $A \longrightarrow \mathcal{H}$ for any (complete?) lattice
+\item Sum, products (I have no applications for these; note that
+  (cartesian) product is $\mathcal{P}2$)
+\item The separation logic partial commutative monoid thing
+\item Chu construction
+\item Step indexing (I'm not super comfortable with this one;
+  fundamentally, it's about doing constructions in the topos of trees,
+  but I don't know how to work with them in “normal maths”)
+\end{itemize}
 
 \section {First order logics and nominal Set}
 
+Note: untyped values.
+
+Fix a set $\mathcal{X}$ of variables.
+
+Structures:
+\begin{itemize}
+\item Same as above but in the category of nominal sets
+\item Doesn't have a name, but support for $\forall$, $\exists$
+  (easily defined as adjoints to weakening)
+\item Something about substitution, I imagine.
+\end{itemize}
+
+Constructions:
+\begin{itemize}
+\item Fix a set $\mathcal{V}$ of values that variables range over,
+  $\mathcal{F}$ a propositional logic. Then (finitely supported)
+  $(\mathcal{X}\longrightarrow\mathcal{V})\longrightarrow\mathcal{F}$ will be the
+  corresponding nominal structure (with appropriate substitutions).
+\end{itemize}
+
 \chapter{Programs, Kleene algebras and such}
 
+Structures:
+\begin{itemize}
+\item Kleene algebras
+\item Kleene algebras with tests
+\item Action algebras
+\end{itemize}
+
+Constructions:
+\begin{itemize}
+\item (generalised) relations: $A \longrightarrow A \longrightarrow
+  \mathcal{F}$ ($A$ arbitrary set, $\mathcal{F}$ \emph{complete}
+  lattice) (complete action algebra).
+\item (generalised) predicate transformers
+  $\mathcal{F}\longrightarrow\mathcal{F}$ (doesn't have all the
+  residuations).
+\item Nominal Kleene algebra $\longrightarrow$ Kleene algebra “that
+  returns values” (in the style of monads). I think I know how to do
+  this.
+\end{itemize}
+
 \chapter{Types, proof theory}
+
+Principle: all categories are small.
+
+Idea for types: replace nominal sets by being fibred over a
+CT-structure (do I remember the terminology correctly?): a cartesian
+category of contexts and substitution, together with an identified
+subset of types. Fibred: every substitution induces a context-change
+functor in the other direction (plus some stuff, probably).
+
+Idea for proof theory: replace preorders with categories (lattice
+$\leadsto$ all finite limits and colimits; complete $\leadsto$ all
+small limits and colimits (I think it's sometimes called
+bicomplete)). We can reinterpret deduction rules as adjoints (this is
+a little trickier because of the naturality conditions: in the rule
+for exponentials, for instance, we need to be natural in everything
+except the bit that changes side; can this be clarified notationally?)
 
 \printbibliography
 
@@ -103,3 +189,5 @@
 % Local Variables:
 % ispell-dictionary: "british"
 % End:
+
+% LocalWords:  adjoints topos fibred
