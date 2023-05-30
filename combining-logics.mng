@@ -1,0 +1,104 @@
+% -*- latex -*-
+
+\documentclass{memoir}
+
+\usepackage{lwarp}
+
+\usepackage[backend=biber,uniquename=false]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+  }
+% \usepackage[plain]{fancyref}
+\usepackage[capitalize]{cleveref}
+\usepackage{mathpartir}
+\usepackage{newunicodechar}
+\usepackage{bussproofs}
+
+
+%%%%%%%%%%%%%%%%% ott %%%%%%%%%%%%%%%%%
+
+\usepackage[supertabular,implicitLineBreakHack]{ottalt}
+\inputott{ott.tex}
+
+%%%%%%%%%%%%%%%%% /ott %%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%% Editing marks %%%%%%%%%%%%%%%%%
+
+  % TOGGLE ME to turn off all the commentary:
+  \InputIfFileExists{no-editing-marks}{
+    \def\noeditingmarks{}
+  }
+
+  \usepackage{xargs}
+  \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+  % ^^ Need for pgfsyspdfmark apparently?
+  \ifx\noeditingmarks\undefined
+      \setlength{\marginparwidth}{1.2cm} % A size that matches the new PACMPL format
+      \newcommand{\Red}[1]{{\color{red}{#1}}}
+      \newcommand{\newaudit}[1]{{\color{blue}{#1}}}
+      \newcommand{\note}[1]{{\color{blue}{\begin{itemize} \item {#1} \end{itemize}}}}
+      \newenvironment{alt}{\color{red}}{}
+
+      \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+      \newcommandx{\info}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+      \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+      \newcommandx{\inconsistent}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=red,#1]{#2}}
+      \newcommandx{\critical}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=red,#1]{#2}}
+      \newcommand{\improvement}[1]{\todo[linecolor=pink,backgroundcolor=pink!25,bordercolor=pink]{#1}}
+      \newcommandx{\resolved}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}} % use this to mark a resolved question
+  \else
+  %    \newcommand{\Red}[1]{#1}
+      \newcommand{\Red}[1]{{\color{red}{#1}}}
+      \newcommand{\newaudit}[1]{#1}
+      \newcommand{\note}[1]{}
+      \newenvironment{alt}{}{}
+  %    \renewcommand\todo[2]{}
+      \newcommand{\unsure}[2][1=]{}
+      \newcommand{\info}[2][1=]{}
+      \newcommand{\change}[2]{}
+      \newcommand{\inconsistent}[2]{}
+      \newcommand{\critical}[2]{}
+      \newcommand{\improvement}[1]{}
+      \newcommand{\resolved}[2]{}
+  \fi
+
+%%%%%%%%%%%%%%%%% /Editing marks %%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% Domain-specific macros %%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% /Domain-specific macros %%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\title{Combining Logics}
+\author{Arnaud Spiwack}
+\maketitle
+
+\chapter{Simple logics}
+
+\section {Propositional logic}
+
+\section {First order logics and nominal Set}
+
+\chapter{Programs, Kleene algebras and such}
+
+\chapter{Types, proof theory}
+
+\printbibliography
+
+\end{document}
+
+% Local Variables:
+% ispell-dictionary: "british"
+% End:
