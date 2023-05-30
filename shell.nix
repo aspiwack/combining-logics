@@ -1,11 +1,19 @@
 with { pkgs = import ./nix {}; };
+
+let
+  # See https://stackoverflow.com/a/53572564
+  ignoringVulns = x: x // { meta = (x.meta // { knownVulnerabilities = []; }); };
+  xpdf-novulns = pkgs.xpdf.overrideAttrs ignoringVulns;
+in
+
+
 pkgs.mkShell
   { buildInputs = with pkgs; [
-      niv
+      # niv
       # haskellPackages.lhs2tex
       biber
       ott
-      pdftk
+      pdftk xpdf-novulns
       entr
       (texlive.combine {
         inherit (texlive)

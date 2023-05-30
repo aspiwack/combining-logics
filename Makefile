@@ -14,21 +14,36 @@ clean:
 	rm -f combining-logics.html
 	rm -f combining-logics_html.*
 	rm -f lwarp*
+	rm -rf pages
 
-%.tex: %.mng $(OTT_FILES)
+combining-logics.tex: combining-logics.mng $(OTT_FILES)
 	ott $(OTT_OPTS) -tex_filter $< $@ $(OTT_FILES)
 
 $(OTT_TEX): $(OTT_FILES)
 	ott $(OTT_OPTS) -o $@ $^
 
-%.pdf %.bbl %_html.tex &: %.tex bibliography.bib $(OTT_TEX)
+%.pdf %.bbl &: %.tex bibliography.bib $(OTT_TEX)
 	cd $(dir $<) && latexmk $(notdir $*)
+
+# I have 0 clue why I need to duplicate this rule, but it seems to be
+# needed somehow…
+%_html.tex: %.tex bibliography.bib $(OTT_TEX)
+	cd $(dir $<) && latexmk $(notdir $*)
+
+# Additional dependency
+%_html.pdf: %.tex
 
 %.html: %_html.pdf
 	cd $(dir $<) && lwarpmk pdftohtml $<
 
 continuous::
 	ls combining-logics.mng bibliography.bib $(OTT_FILES) | entr make
+
+github-pages:: combining-logics.html
+	mkdir -p pages
+	cp $^ pages/
+	mv pages/combining-logics.html pages/index.html
+
 
 # .SECONDARY:
 # Uncommenting the line above prevents deletion of temporary files, which can be helpful for debugging build problems
