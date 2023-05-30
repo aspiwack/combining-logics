@@ -3,6 +3,7 @@
 \documentclass{memoir}
 
 \usepackage{lwarp}
+\setcounter{SideTOCDepth}{2}
 
 \usepackage[backend=biber,uniquename=false]{biblatex}
 \addbibresource{bibliography.bib}
