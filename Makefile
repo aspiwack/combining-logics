@@ -39,7 +39,7 @@ $(OTT_TEX): $(OTT_FILES)
 continuous::
 	ls combining-logics.mng bibliography.bib $(OTT_FILES) | entr make
 
-github-pages:: combining-logics.html
+github-pages:: combining-logics.html lwarp.css
 	mkdir -p pages
 	cp $^ pages/
 	mv pages/combining-logics.html pages/index.html
