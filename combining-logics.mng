@@ -117,7 +117,7 @@ Constructions:
   (cartesian) product is $\mathcal{P}2$)
 \item The separation logic partial commutative monoid thing
 \item Chu construction
-\item Step indexing (I'm not super comfortable with this one;
+\item Step indexing (I'm not very knowledgeable about this one;
   fundamentally, it's about doing constructions in the topos of trees,
   but I don't know how to work with them in “normal maths”)
 \end{itemize}
