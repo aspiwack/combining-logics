@@ -43,11 +43,13 @@ jobs:
 
       - name: Install deps
         run: |
-          nix-shell --run ""
+          nix -L develop --command echo "=== Installed ==="
 
       - name: Build
         run: |
-          nix-shell --pure --run "make github-pages"
+          nix -L develop --command typst compile combining-logics.typ
+          mkdir -p pages
+          cp combining-logics.pdf pages/
 
       - name: Upload meta artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v1
