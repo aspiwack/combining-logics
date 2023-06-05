@@ -1,8 +1,10 @@
 {
   nixConfig = {
     extra-substituters = [
+      "https://aspiwack.cachix.org"
     ];
     extra-trusted-public-keys = [
+      "aspiwack.cachix.org-1:2D/Nc4rGV10LY8O+c3HMbOJ4wtMY6w7xFubjEmexcfc="
     ];
   };
 
