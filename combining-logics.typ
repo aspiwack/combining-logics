@@ -1,5 +1,21 @@
-// \title{Combining Logics}
-// \author{Arnaud Spiwack}
+#let title = [Combining Logics]
+#let author = [Arnaud Spiwack]
+
+// Styling the page
+#set page(margin: 1.75in)
+#set par(leading: 0.55em, first-line-indent: 1.8em, justify: true)
+#show par: set block(spacing: 0.55em)
+#show heading: set block(above: 1.4em, below: 1em)
+#set heading(numbering: "1.1  ")
+#show heading.where(level: 1): it => [
+  #pagebreak(weak: true)
+  #block[Chapter #counter(heading).display() #it.body]
+]
+
+// Front matter
+#align(center, text(21pt)[*#title*])
+#align(center, text(16pt)[#author])
+#align(center)[Version compiled on #datetime.today().display()]
 
 = Simple logics
 #label("cha:simple-logics")
