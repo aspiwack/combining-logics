@@ -18,7 +18,7 @@
 #align(center)[Version compiled on #datetime.today().display()]
 
 = Simple logics
-#label("cha:simple-logics")
+<cha:simple-logics>
 == Notations
 #label("notations")
 Inference rules interpreted as Galois connections.
@@ -119,4 +119,4 @@ naturality conditions: in the rule for exponentials, for instance, we
 need to be natural in everything except the bit that changes side; can
 this be clarified notationally?)
 
-The constructions from #link("#cha:simple-logics")[1] carry over.
+The constructions from @cha:simple-logics carry over.
