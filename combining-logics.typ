@@ -1,6 +1,6 @@
-#import "style.typ"
+#import "styling.typ"
 
-#show: doc => style.book(
+#show: doc => styling.book(
     title: [Combining Logics],
     author: [Arnaud Spiwack],
     date: datetime.today(),
@@ -14,6 +14,21 @@
 Inference rules interpreted as Galois connections.
 
 In judgements, only one hypothesis and one conclusion.
+
+#let rule(premise, conclusion) = {
+  style(styles => {
+    let len = calc.max(measure(premise, styles).width, measure(conclusion, styles).width)
+    box[
+     #set align(center)
+     #premise
+     #line(length: len, stroke:0.5pt)
+     #conclusion
+    ]
+  })
+}
+
+
+#rule([#rule([a more premise], [a premise])   yet another premise], [a conclusion])
 
 == Propositional logic
 #label("propositional-logic")
