@@ -23,6 +23,7 @@
           buildInputs = [
             typst.packages.${system}.default
             pkgs.typst-lsp
+            pkgs.just
           ];
         };
       });
