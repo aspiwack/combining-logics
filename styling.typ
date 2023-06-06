@@ -1,3 +1,6 @@
+#let page-margin = 1.75in
+#let margin-margin = 1em
+
 #let book(
     title: none,
     author: none,
@@ -6,7 +9,7 @@
     ) = {
 
   // Styling the page (margin, indentation, vertical space)
-  set page(margin: 1.75in)
+  set page(margin: page-margin)
   set par(leading: 0.55em, first-line-indent: 1.8em, justify: true)
   show par: set block(spacing: 0.55em)
   show heading: set block(above: 1.4em, below: 1em)
@@ -35,4 +38,31 @@
 
   // Display content
   doc
+}
+
+// Adapted from
+// https://github.com/jwhear/tufte-handout/blob/d36a5b8bdd4f7515c849fe9621591e494ee0fe5b/tufte-handout.typ#L6-L21
+// Still imperfect: I would like it to take 0 space at the call
+// site. It appears to create a paragraph. I don't know why.
+#let in-margin(dy: -1em, content) = {
+    place(
+        right,
+        dx: page-margin,
+        dy: dy,
+        block(width: page-margin, inset: margin-margin, {
+            set text(size: 0.75em)
+            set align(left)
+            content
+        })
+    )
+}
+
+#let rect-in-margin(color: black, content) = {
+    let decorated = rect(stroke: color, fill: color.lighten(80%),
+                         radius: 6pt, (content))
+    in-margin(decorated)
+}
+
+#let margin-note(color: black, content) = {
+   rect-in-margin(color: color, content)
 }

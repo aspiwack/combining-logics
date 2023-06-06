@@ -15,6 +15,15 @@ Inference rules interpreted as Galois connections.
 
 In judgements, only one hypothesis and one conclusion.
 
+
+test
+#styling.in-margin([This is a marginal note #lorem(20)])
+#lorem(40)
+
+test
+#styling.margin-note(color: red, [This will be a todo note #lorem(15)])
+#lorem(40)
+
 #let rule(premises, conclusion) = {
   style(styles => {
     let premise = if (type(premises) == "content") {premises} else {premises.join(h(2em))}
