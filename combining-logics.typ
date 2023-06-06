@@ -11,6 +11,14 @@
   #pagebreak(weak: true)
   #block[Chapter #counter(heading).display() #it.body]
 ]
+#set ref(supplement: it => {
+  if it.func() == heading and it.level == 1 {
+    "Chapter"
+  }
+  else {
+    it.supplement
+  }
+})
 
 // Front matter
 #align(center, text(21pt)[*#title*])
