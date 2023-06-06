@@ -15,8 +15,9 @@ Inference rules interpreted as Galois connections.
 
 In judgements, only one hypothesis and one conclusion.
 
-#let rule(premise, conclusion) = {
+#let rule(premises, conclusion) = {
   style(styles => {
+    let premise = if (type(premises) == "content") {premises} else {premises.join(h(2em))}
     let len = calc.max(measure(premise, styles).width, measure(conclusion, styles).width)
     box[
      #set align(center)
@@ -28,7 +29,7 @@ In judgements, only one hypothesis and one conclusion.
 }
 
 
-#rule([#rule([a more premise], [a premise])   yet another premise], [a conclusion])
+#rule((rule(([a more premise],[two more premises]), [a premise]), [yet another premise]), [a conclusion])
 
 == Propositional logic
 #label("propositional-logic")
