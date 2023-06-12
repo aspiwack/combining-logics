@@ -7,6 +7,12 @@
     doc,
     )
 
+== Introduction
+
+Similar to logical interpretations (is it the standard terminology?
+Like the Dialectica interpretation and such), but possibly a different
+point of view.
+
 = Simple logics
 <cha:simple-logics>
 == Notations
@@ -129,7 +135,13 @@ Hoare triple ${P}u{Q}$ can be represented as (see @kleene-algebras:relations)
 
 $u tack.r pre(P) arrow.r post(Q)$
 
-Gives a direct representation of a Hoare specification as $pre(P) arrow.r post(Q)$.
+Gives a direct representation of a Hoare specification as $pre(P)
+arrow.r post(Q)$.
+
+Are there interesting examples of:
+
+- left residuation by a state-changing relation?
+- right residuation?
 
 = Types, proof theory
 #label("cha:types-proof-theory")
