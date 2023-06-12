@@ -23,10 +23,14 @@ Structures:
 -  Lattices
 
 -  Complete Lattices
+  - Note to self: finite products distribute with arbitrary sum iff
+    (complete) Heyting algebra. Arbitrary products distribute over
+    arbitrary sums: can introduce #emph[completely distributive] terminology.
 
 -  Heyting algebras
 
 -  Complete Heyting algebras
+
 
 -  (Ordered) residuated commutative monoid (#emph[i.e.] multiplicative
   intuitionistic linear logic) (which can also be any lattice structures
@@ -92,6 +96,30 @@ Constructions:
 -  Nominal Kleene algebra $arrow.r$ Kleene algebra "that returns values"
   (in the style of monads). I think I know how to do this.
 
+== Kleene algebras
+
+=== Relations
+
+#let base = $cal(F)$
+
+Fix $base$ [TODO Colour], complete Heyting Algebra, and a “state
+space” $S$.
+
+Relations: $S arrow.r S arrow.r F$
+
+#let pre(p) = $#{p}_arrow.b$
+#let post(q) = $#{q}^arrow.t$
+
+Hoare triple ${P}u{Q}$ can be represented as
+
+$pre(P) u tack.r post(Q)$
+
+With
+
+$s pre(P) s eq.delta s in P$
+
+$s_i post(Q) s_o eq.delta s_o in Q$
+
 = Types, proof theory
 #label("cha:types-proof-theory")
 Principle: all categories are small.
@@ -137,4 +165,3 @@ test
 
 
 #rule((rule(([a more premise],[two more premises]), [a premise]), [yet another premise]), [a conclusion])
-
