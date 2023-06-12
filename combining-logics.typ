@@ -99,6 +99,7 @@ Constructions:
 == Kleene algebras
 
 === Relations
+<kleene-algebras:relations>
 
 #let base = $cal(F)$
 
@@ -119,6 +120,16 @@ With
 $s pre(P) s eq.delta s in P$
 
 $s_i post(Q) s_o eq.delta s_o in Q$
+
+== Action algebras
+
+=== Relations
+
+Hoare triple ${P}u{Q}$ can be represented as (see @kleene-algebras:relations)
+
+$u tack.r pre(P) arrow.r post(Q)$
+
+Gives a direct representation of a Hoare specification as $pre(P) arrow.r post(Q)$.
 
 = Types, proof theory
 #label("cha:types-proof-theory")
