@@ -16,30 +16,6 @@ Inference rules interpreted as Galois connections.
 In judgements, only one hypothesis and one conclusion.
 
 
-test
-#styling.in-margin([This is a marginal note #lorem(20)])
-#lorem(40)
-
-test
-#styling.margin-note(color: red, [This will be a todo note #lorem(15)])
-#lorem(40)
-
-#let rule(premises, conclusion) = {
-  style(styles => {
-    let premise = if (type(premises) == "content") {premises} else {premises.join(h(2em))}
-    let len = calc.max(measure(premise, styles).width, measure(conclusion, styles).width)
-    box[
-     #set align(center)
-     #premise
-     #line(length: len, stroke:0.5pt)
-     #conclusion
-    ]
-  })
-}
-
-
-#rule((rule(([a more premise],[two more premises]), [a premise]), [yet another premise]), [a conclusion])
-
 == Propositional logic
 #label("propositional-logic")
 Structures:
@@ -135,3 +111,30 @@ need to be natural in everything except the bit that changes side; can
 this be clarified notationally?)
 
 The constructions from @cha:simple-logics carry over.
+
+= TEMP experiments with the typesetter
+
+test
+#styling.in-margin([This is a marginal note #lorem(20)])
+#lorem(40)
+
+test
+#styling.margin-note(color: red, [This will be a todo note #lorem(15)])
+#lorem(40)
+
+#let rule(premises, conclusion) = {
+  style(styles => {
+    let premise = if (type(premises) == "content") {premises} else {premises.join(h(2em))}
+    let len = calc.max(measure(premise, styles).width, measure(conclusion, styles).width)
+    box[
+     #set align(center)
+     #premise
+     #line(length: len, stroke:0.5pt)
+     #conclusion
+    ]
+  })
+}
+
+
+#rule((rule(([a more premise],[two more premises]), [a premise]), [yet another premise]), [a conclusion])
+
