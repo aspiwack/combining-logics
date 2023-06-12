@@ -106,6 +106,7 @@ Constructions:
 
 === Relations
 <kleene-algebras:relations>
+// <relations:def>
 
 #let base = $cal(F)$
 
@@ -162,6 +163,18 @@ need to be natural in everything except the bit that changes side; can
 this be clarified notationally?)
 
 The constructions from @cha:simple-logics carry over.
+
+Note: all my categories are small (but not necessarily the fibrations).
+
+== Relations
+
+Relations can be generalised further: take any fibration over a
+cartesian category with complete Heyting algebras fibers (the
+definition of @kleene-algebras:relations is obtained by taking fibers
+to be powersets). Take a fiber of $A x A$.
+
+Can be done the whole fibration in one go with Bart Jacobs's pullback
+constructions. [TODO bibliography]
 
 = TEMP experiments with the typesetter
 
