@@ -118,29 +118,29 @@ space” $S$.
 
 Relations: $S arrow.r S arrow.r #base$
 
-#let pre(p) = $#{p}_arrow.b$
-#let post(q) = $#{q}^arrow.t$
+#let pre(p) = $#{basic(p)}_arrow.b$
+#let post(q) = $#{basic(q)}^arrow.t$
 
-Hoare triple ${derived P}u{derived Q}$ can be represented as
+Hoare triple ${basic(P)}derived(u){basic(Q)}$ can be represented as
 
-$pre(P) u tack.r post(Q)$
+$derived(pre(P) u tack.r post(Q))$
 
 With
 
-$s pre(P) s eq.delta s in P$
+$s pre(P) s eq.delta s in basic(P)$
 
-$s_i post(Q) s_o eq.delta s_o in Q$
+$s_i post(Q) s_o eq.delta s_o in basic(Q)$
 
 == Action algebras
 
 === Relations
 
-Hoare triple ${P}u{Q}$ can be represented as (see @kleene-algebras:relations)
+Hoare triple ${basic(P)}derived(u){basic(Q)}$ can be represented as (see @kleene-algebras:relations)
 
-$u tack.r pre(P) arrow.r post(Q)$
+$derived(u tack.r pre(P) arrow.r post(Q))$
 
-Gives a direct representation of a Hoare specification as $pre(P)
-arrow.r post(Q)$.
+Gives a direct representation of a Hoare specification as $derived(pre(P)
+arrow.r post(Q))$.
 
 Are there interesting examples of:
 

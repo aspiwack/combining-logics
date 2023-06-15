@@ -54,7 +54,8 @@
 #let fancy-font-4(body) = [#set text(fill: yellow-orange); #body]
 #let fancy-font-5(body) = [#set text(fill: carnation-pink); #body]
 
-// Adapted from
+// Adapted fromxb
+
 // https://github.com/jwhear/tufte-handout/blob/d36a5b8bdd4f7515c849fe9621591e494ee0fe5b/tufte-handout.typ#L6-L21
 // Still imperfect: I would like it to take 0 space at the call
 // site. It appears to create a paragraph. I don't know why.
