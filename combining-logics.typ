@@ -7,6 +7,9 @@
     doc,
     )
 
+#let basic(body) = styling.fancy-font-1(body)
+#let derived(body) = styling.fancy-font-2(body)
+
 == Introduction
 
 Similar to logical interpretations (is it the standard terminology?
@@ -108,36 +111,36 @@ Constructions:
 <kleene-algebras:relations>
 // <relations:def>
 
-#let base = $cal(F)$
+#let base = $basic(cal(F))$
 
-Fix $base$ [TODO Colour], complete Heyting Algebra, and a “state
+Fix $base$, complete Heyting Algebra, and a “state
 space” $S$.
 
-Relations: $S arrow.r S arrow.r F$
+Relations: $S arrow.r S arrow.r #base$
 
-#let pre(p) = $#{p}_arrow.b$
-#let post(q) = $#{q}^arrow.t$
+#let pre(p) = $#{basic(p)}_arrow.b$
+#let post(q) = $#{basic(q)}^arrow.t$
 
-Hoare triple ${P}u{Q}$ can be represented as
+Hoare triple ${basic(P)}derived(u){basic(Q)}$ can be represented as
 
-$pre(P) u tack.r post(Q)$
+$derived(pre(P) u tack.r post(Q))$
 
 With
 
-$s pre(P) s eq.delta s in P$
+$s pre(P) s eq.delta s in basic(P)$
 
-$s_i post(Q) s_o eq.delta s_o in Q$
+$s_i post(Q) s_o eq.delta s_o in basic(Q)$
 
 == Action algebras
 
 === Relations
 
-Hoare triple ${P}u{Q}$ can be represented as (see @kleene-algebras:relations)
+Hoare triple ${basic(P)}derived(u){basic(Q)}$ can be represented as (see @kleene-algebras:relations)
 
-$u tack.r pre(P) arrow.r post(Q)$
+$derived(u tack.r pre(P) arrow.r post(Q))$
 
-Gives a direct representation of a Hoare specification as $pre(P)
-arrow.r post(Q)$.
+Gives a direct representation of a Hoare specification as $derived(pre(P)
+arrow.r post(Q))$.
 
 Are there interesting examples of:
 
@@ -177,6 +180,12 @@ Can be done the whole fibration in one go with Bart Jacobs's pullback
 constructions. [TODO bibliography]
 
 = TEMP experiments with the typesetter
+
+#styling.fancy-font-1[fancy font 1]
+#styling.fancy-font-2[fancy font 2]
+#styling.fancy-font-3[fancy font 3]
+#styling.fancy-font-4[fancy font 4]
+#styling.fancy-font-5[fancy font 5]
 
 test
 #styling.in-margin([This is a marginal note #lorem(20)])
