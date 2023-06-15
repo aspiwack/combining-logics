@@ -40,11 +40,19 @@
   doc
 }
 
-#let fancy-font-1(body) = body
-#let fancy-font-2(body) = body
-#let fancy-font-3(body) = body
-#let fancy-font-4(body) = body
-#let fancy-font-5(body) = body
+// Colours from the Latex xcolor package
+#let red-orange = red // TODO
+#let royal-blue = blue // TODO
+#let emerald = teal // TODO
+#let yellow-orange = orange // TODO
+#let carnation-pink = fuchsia // TODO
+
+// TODO: add non-colour visual differences.
+#let fancy-font-1(body) = [#set text(fill: red-orange); #body]
+#let fancy-font-2(body) = [#set text(fill: royal-blue); #body]
+#let fancy-font-3(body) = [#set text(fill: emerald); #body]
+#let fancy-font-4(body) = [#set text(fill: yellow-orange); #body]
+#let fancy-font-5(body) = [#set text(fill: carnation-pink); #body]
 
 // Adapted from
 // https://github.com/jwhear/tufte-handout/blob/d36a5b8bdd4f7515c849fe9621591e494ee0fe5b/tufte-handout.typ#L6-L21

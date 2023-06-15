@@ -181,6 +181,12 @@ constructions. [TODO bibliography]
 
 = TEMP experiments with the typesetter
 
+#styling.fancy-font-1[fancy font 1]
+#styling.fancy-font-2[fancy font 2]
+#styling.fancy-font-3[fancy font 3]
+#styling.fancy-font-4[fancy font 4]
+#styling.fancy-font-5[fancy font 5]
+
 test
 #styling.in-margin([This is a marginal note #lorem(20)])
 #lorem(40)
