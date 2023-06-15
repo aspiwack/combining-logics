@@ -113,15 +113,15 @@ Constructions:
 
 #let base = $basic(cal(F))$
 
-Fix $base$ [TODO Colour], complete Heyting Algebra, and a “state
+Fix $base$, complete Heyting Algebra, and a “state
 space” $S$.
 
-Relations: $S arrow.r S arrow.r F$
+Relations: $S arrow.r S arrow.r #base$
 
 #let pre(p) = $#{p}_arrow.b$
 #let post(q) = $#{q}^arrow.t$
 
-Hoare triple ${P}u{Q}$ can be represented as
+Hoare triple ${derived P}u{derived Q}$ can be represented as
 
 $pre(P) u tack.r post(Q)$
 
