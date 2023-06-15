@@ -7,6 +7,9 @@
     doc,
     )
 
+#let basic(body) = styling.fancy-font-1(body)
+#let derived(body) = styling.fancy-font-2(body)
+
 == Introduction
 
 Similar to logical interpretations (is it the standard terminology?
@@ -108,7 +111,7 @@ Constructions:
 <kleene-algebras:relations>
 // <relations:def>
 
-#let base = $cal(F)$
+#let base = $basic(cal(F))$
 
 Fix $base$ [TODO Colour], complete Heyting Algebra, and a “state
 space” $S$.

@@ -40,6 +40,12 @@
   doc
 }
 
+#let fancy-font-1(body) = body
+#let fancy-font-2(body) = body
+#let fancy-font-3(body) = body
+#let fancy-font-4(body) = body
+#let fancy-font-5(body) = body
+
 // Adapted from
 // https://github.com/jwhear/tufte-handout/blob/d36a5b8bdd4f7515c849fe9621591e494ee0fe5b/tufte-handout.typ#L6-L21
 // Still imperfect: I would like it to take 0 space at the call
