@@ -163,7 +163,9 @@ We can define
 
 Notice what it says about loops: loops take a value as input and return one as output, the output of an iteration is fed as the input of the next iteration.
 
-The intuition behind this is the bind syntax, à la Haskell. We want to be able to write $x arrow.l u\; y arrow.l v\; w$. This is not, however, of the form $u v w$: in the former $w$ sees the return value $x$ of $u$, but not in the latter. We need an extra contruction $derived("bind" x.standard(angle.l i\, o angle.r basic(u))) eq.delta (angle.l x\, o angle.r basic(u)\[i\\x\])$ (TODO: define in terms of permutations instead. Or maybe in term of “concretion” (turn variable binding into functions, see Andrew Pitts's book))
+The intuition behind this is the bind syntax, à la Haskell. We want to be able to write $derived(x arrow.l u\; y arrow.l v\; w)$. This is not, however, of the form $derived(u v w)$: in the former $derived(w)$ sees the return value $derived(x)$ of $derived(u)$, but not in the latter. We need an extra contruction $derived("bind" x.standard(angle.l i\, o angle.r basic(u))) eq.delta (angle.l x\, o angle.r basic(u)\[i\\x\])$ (TODO: define in terms of permutations instead. Or maybe in term of “concretion” (turn variable binding into functions, see Andrew Pitts's book))
+
+Then $derived(x arrow.l u\; y arrow.l v)\; w$ can be represented as $derived(u \; ("bind" x. v w))$.
 
 == Action algebras
 
