@@ -7,6 +7,8 @@
     doc,
     )
 
+#let standard(body) = styling.no-fancy-font(body)
+#let basic(body) = styling.fancy-font-1(body)
 #let basic(body) = styling.fancy-font-1(body)
 #let derived(body) = styling.fancy-font-2(body)
 
@@ -130,6 +132,38 @@ With
 $s pre(P) s eq.delta s in basic(P)$
 
 $s_i post(Q) s_o eq.delta s_o in basic(Q)$
+
+=== Returning values, bind
+
+#let vars = $cal(X)$
+#let base = $basic(cal(K))$
+#let defined = $derived(cal(K))$
+
+Fix a set of variable $vars$.
+
+Fix $base$ a #emph{nominal} complete Kleene algebra (#emph[i.e.] a
+Kleene algebra which is a complete lattice). That is is nominal means
+that it's a Kleene algebra in the topos of nominal sets; alternatively
+it's a nominal set, and all the Kleene algebra operations are
+equivariant.
+
+Set $defined eq.delta vars^2.base$. That is the set of all the
+$angle.l i, o angle.r basic(u)$, with $i,o in vars$, $basic(u) in
+base$ of triples up to $alpha$-equivalence.
+
+Idea: $angle.l i, o angle.r basic(u)$ is given a distinguished
+variable $o$ to store its result. It, additionally, #emph[receives]
+the result of the previous operation in variable $i$.
+
+We can define
+
+- $derived(standard(angle.l i\, o angle.r basic(u)) + standard(angle.l i\, o angle.r basic(v))) eq.delta angle.l i, o angle.r basic(u+v)$ (similarly with the infinite sum: careful, it's only defined if there is a common finite support for all the summed elements)
+- $derived(standard(angle.l i\, x angle.r basic(u)) \; standard(angle.l x\, o angle.r basic(v))) eq.delta angle.l i, o angle.r basic(u\;v)$
+- $derived(u)^*) eq.delta derived(sum u^n)$ (this is where we need the assumption that #base is complete. There may be a way to define the star of #defined in terms of the star of #base, but I don't know how, and I can't say I have much hope)
+
+Notice what it says about loops: loops take a value as input and return one as output, the output of an iteration is fed as the input of the next iteration.
+
+The intuition behind this is the bind syntax, à la Haskell. We want to be able to write $x arrow.l u\; y arrow.l v\; w$. This is not, however, of the form $u v w$: in the former $w$ sees the return value $x$ of $u$, but not in the latter. We need an extra contruction $derived("bind" x.standard(angle.l i\, o angle.r basic(u))) eq.delta (angle.l x\, o angle.r basic(u)\[i\\x\])$ (TODO: define in terms of permutations instead. Or maybe in term of “concretion” (turn variable binding into functions, see Andrew Pitts's book))
 
 == Action algebras
 

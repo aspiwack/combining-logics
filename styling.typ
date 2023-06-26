@@ -58,6 +58,7 @@
 #let fancy-font-3(body) = [#set text(fill: emerald); #body]
 #let fancy-font-4(body) = [#set text(fill: yellow-orange); #body]
 #let fancy-font-5(body) = [#set text(fill: carnation-pink); #body]
+#let no-fancy-font(body) =[#set text(fill: black); #body]
 
 // Adapted fromxb
 
