@@ -197,6 +197,8 @@ Maybe if #base is a Kleene algebra #emph[in the category of domains/CPOs], then 
 
 If the above works, the question remains: how do I build a Kleene algebra in the category of domains if I have a regular Kleene algebra (like the construction that adds variable makes a logic nominal). A similar construction could be used to build a Higher-Order logic as well.
 
+An answer containing no domains can be found in #emph[Relational semantics for higher-order programs], Kamal Aboul-Hosn and Dexter Kozen. They solve a harder problem than we need: not only do they have higher-order functions, but they also have local state. Maybe dropping the local state story simplifies their solution. Maybe not. On the other hand, theirs is a relational semantics built from scratch, it may not be easy to build the same on top of an existing Kleene algebra.
+
 Potential construction: build a Kleene algebra with functions using a stack machine (application is push). Is there a generic construction that'd be useful there? If we have an algebra of relation on a state, we can presumably enrich the state with a stack. Is there a general construction with an arbitrary Kleene algebra as the input?
 
 == Action algebras
