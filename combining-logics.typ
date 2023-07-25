@@ -94,6 +94,9 @@ Constructions:
   propositional logic. Then (finitely supported)
   $lr((cal(X) arrow.r cal(V))) arrow.r cal(F)$ will be the corresponding
   nominal structure (with appropriate substitutions).
+  - If I take $cal(V)=cal(F)$,  $lr((cal(X) arrow.r
+    cal(F))) arrow.r cal(F)$ is a second-order logic, I believe.
+  - Can I extend the above into a higher-order logic? Does it require domain theory?
 
 = Programs, Kleene algebras and such
 #label("programs-kleene-algebras-and-such")
