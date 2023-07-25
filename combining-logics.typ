@@ -150,7 +150,7 @@ $s_i post(Q) s_o eq.delta s_o in basic(Q)$
 
 Fix a set of variable $vars$.
 
-Fix $base$ a #emph{nominal} complete Kleene algebra (#emph[i.e.] a
+Fix $base$ a #emph[nominal] complete Kleene algebra (#emph[i.e.] a
 Kleene algebra which is a complete lattice). That is is nominal means
 that it's a Kleene algebra in the topos of nominal sets; alternatively
 it's a nominal set, and all the Kleene algebra operations are
