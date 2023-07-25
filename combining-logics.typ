@@ -26,6 +26,15 @@ Inference rules interpreted as Galois connections.
 
 In judgements, only one hypothesis and one conclusion.
 
+Structures:
+
+-  Semirings, I think everything here is a semiring, sometimes in more
+   than one way though. Whereas not everything is, say, a lattice.
+   - They're all additively idempotent semirings too. So that $a + b = b$ can
+     be taken as the definition of $a tack.r b$.
+   - I don't know whether ordered semiring are useful here. We have
+     one canonical order and we don't need the generality.
+
 
 == Propositional logic
 #label("propositional-logic")
