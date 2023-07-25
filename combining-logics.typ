@@ -192,7 +192,9 @@ But this only covers first order. If we want higher-order (that is, functions as
 
 Maybe if #base is a Kleene algebra #emph[in the category of domains/CPOs], then we can create a #defined such that #base is a sub-Kleene algebra of #defined? Does Scott's construction give us anything near this? Possibly I need complete Kleene algebras to reconstruct the star?
 
-If the above works, the question remains: how do I build a Kleene algebra in the category of domains if I have a regular Kleene algebra (like the construction that adds variable makes a logic nominal).
+If the above works, the question remains: how do I build a Kleene algebra in the category of domains if I have a regular Kleene algebra (like the construction that adds variable makes a logic nominal). A similar construction could be used to build a Higher-Order logic as well.
+
+Potential construction: build a Kleene algebra with functions using a stack machine (application is push). Is there a generic construction that'd be useful there? If we have an algebra of relation on a state, we can presumably enrich the state with a stack. Is there a general construction with an arbitrary Kleene algebra as the input?
 
 == Action algebras
 
