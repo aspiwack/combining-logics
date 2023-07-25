@@ -190,6 +190,10 @@ function can be a value of $values times values arrow.r base$.
 
 But this only covers first order. If we want higher-order (that is, functions as values), can domain theory help us build a Kleene algebra where $defined arrow.r defined subset.eq defined$? can it be derived from a previously existing #base? What would the relationship between #base and #defined be?
 
+Maybe if #base is a Kleene algebra #emph[in the category of domains/CPOs], then we can create a #defined such that #base is a sub-Kleene algebra of #defined? Does Scott's construction give us anything near this? Possibly I need complete Kleene algebras to reconstruct the star?
+
+If the above works, the question remains: how do I build a Kleene algebra in the category of domains if I have a regular Kleene algebra (like the construction that adds variable makes a logic nominal).
+
 == Action algebras
 
 === Relations
